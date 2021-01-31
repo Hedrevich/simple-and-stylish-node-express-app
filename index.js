@@ -27,6 +27,9 @@ app.use(express.static(path.join(__dirname, "public")));
 /**
  * Routes Definitions
  */
+app.get("/user", (req, res) => {
+    res.render("user", { title: "Profile", userProfile: { nickname: "Auth0" } });
+});
 
 app.get("/", (req, res) => {
     res.render("index", { title: "Home" });
